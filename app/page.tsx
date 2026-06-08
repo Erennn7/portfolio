@@ -195,7 +195,7 @@ export default function Home() {
             Over time, that curiosity evolved into building products. I started diving into hackathons, collaborating on open-source libraries, and eventually building custom software systems to help real businesses solve their logistical and operational issues.
           </p>
           <p>
-            I enjoy working at the intersection of engineering, AI systems, and product thinking. The best projects are the ones where technology moves out of the way and directly improves someone's day-to-day life.
+            I enjoy working at the intersection of engineering, AI systems, and product thinking. The best projects are the ones where technology moves out of the way and directly improves someone&apos;s day-to-day life.
           </p>
         </Section>
 

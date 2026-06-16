@@ -1,95 +1,18 @@
+import Link from "next/link";
 import {
   Navbar,
   StatusBadge,
   Section,
-  TimelineItem,
-  ProjectCard,
   StackPill,
   WritingItem,
 } from "./components";
 
 export default function Home() {
-  const experiences = [
-    {
-      company: "Nexentia",
-      role: "Co-Founder & Full Stack Developer",
-      period: "2025 — Present",
-      highlights: [
-        "Built and shipped 5+ production-grade software systems for real clients",
-        "Shipped solutions across healthcare, retail, hospitality, and logistics sectors",
-        "Designed scalable backend architectures and managed production deployments",
-        "Managed client communications, translating business requirements into code",
-        "Made critical architectural, technology choice, and business trade-offs",
-      ],
-    },
-    {
-      company: "ANK Upsurge Digital",
-      role: "MERN + GenAI Intern",
-      period: "2025",
-      highlights: [
-        "Built and implemented AI-powered task management features into primary SaaS product",
-        "Integrated Vercel AI SDK to stream real-time generative responses",
-        "Developed and optimized complex Node.js/Express backend APIs",
-        "Improved system reliability through structured integration and unit testing",
-      ],
-    },
-  ];
-
   const wins = [
     { text: "🏆 Won 4 national-level hackathons against hundreds of competing teams" },
     { text: "⚡ Contributed 20+ merged pull requests to stdlib-js (JavaScript standard library)" },
     { text: "🚀 Shipped multiple production systems actively used by real businesses" },
     { text: "🤝 Co-founded a software solutions company (Nexentia) while pursuing engineering" },
-  ];
-
-  const projects = [
-    {
-      name: "Trinetra",
-      description: "An AI-powered public safety platform engineered for large-scale gatherings. Uses computer vision and smart communications to coordinate security and emergency services in real-time.",
-      features: [
-        "Multi-agent architecture for automated coordination",
-        "Real-time crowd density & anomaly monitoring",
-        "AI CCTV threat detection models",
-        "Twilio-powered automated emergency alerts",
-        "Voice-assisted incident reporting portal",
-        "Intelligent AI-based lost & found registry",
-      ],
-      techStack: [
-        "Next.js",
-        "Node.js",
-        "Flask",
-        "Firebase",
-        "Gemini",
-        "Twilio",
-        "VideoSDK",
-      ],
-      links: [
-        { label: "GitHub", href: "https://github.com/samarthkolarkar/trinetra" },
-      ],
-    },
-    {
-      name: "CureConnect",
-      description: "A comprehensive telemedicine and healthcare accessibility platform designed to bridge the gap between patients and specialized medical attention, even in remote locations.",
-      features: [
-        "WebRTC-powered real-time video consultations",
-        "Instant messaging and doctor-patient chat rooms",
-        "AI-assisted diagnosis and summary reports",
-        "IVRS telephony integration for offline access",
-        "Google Maps real-time location mapping",
-        "Multilingual interface for regional reach",
-      ],
-      techStack: [
-        "Next.js",
-        "Node.js",
-        "WebSockets",
-        "Google Maps",
-        "Exotel",
-        "AI Models",
-      ],
-      links: [
-        { label: "GitHub", href: "https://github.com/samarthkolarkar/cureconnect" },
-      ],
-    },
   ];
 
   const techStack = [
@@ -199,21 +122,41 @@ export default function Home() {
           </p>
         </Section>
 
-        {/* Work / Experience Section */}
+        {/* Work / Experience Section preview */}
         <Section id="work" title="Work" delayClass="delay-225">
           <h3 className="text-xs uppercase tracking-wider text-foreground/70 mb-4 font-mono font-medium">
             Things I’ve Built Professionally
           </h3>
-          <div className="flex flex-col gap-y-10">
-            {experiences.map((exp, idx) => (
-              <TimelineItem
-                key={idx}
-                company={exp.company}
-                role={exp.role}
-                period={exp.period}
-                highlights={exp.highlights}
-              />
-            ))}
+          <div className="flex flex-col gap-y-6">
+            <div className="flex flex-col gap-y-1">
+              <div className="flex justify-between items-baseline">
+                <span className="text-foreground text-sm font-semibold">Co-Founder & Full Stack Developer</span>
+                <span className="text-xs text-secondary/60 font-mono">2025 — Present</span>
+              </div>
+              <span className="text-xs text-secondary/80">Nexentia</span>
+              <p className="text-xs text-secondary/75 mt-1 leading-relaxed">
+                Co-founded a software solutions agency to build production systems across healthcare, retail, hospitality, and logistics.
+              </p>
+            </div>
+            
+            <div className="flex flex-col gap-y-1">
+              <div className="flex justify-between items-baseline">
+                <span className="text-foreground text-sm font-semibold">MERN + GenAI Intern</span>
+                <span className="text-xs text-secondary/60 font-mono">2025</span>
+              </div>
+              <span className="text-xs text-secondary/80">ANK Upsurge Digital</span>
+              <p className="text-xs text-secondary/75 mt-1 leading-relaxed">
+                Built AI task managers and streamed real-time summaries using Node.js and the Vercel AI SDK.
+              </p>
+            </div>
+            
+            <Link
+              href="/work"
+              className="text-xs text-foreground font-mono font-medium inline-flex items-center gap-1.5 hover:underline underline-offset-4 w-fit pt-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground/50 rounded"
+              id="view-all-work-link"
+            >
+              View detailed timeline and architectures →
+            </Link>
           </div>
         </Section>
 
@@ -228,22 +171,33 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* Projects Section */}
+        {/* Projects Section preview */}
         <Section id="projects" title="Projects" delayClass="delay-375">
           <h3 className="text-xs uppercase tracking-wider text-foreground/70 mb-4 font-mono font-medium">
             Things I’ve Built
           </h3>
-          <div className="flex flex-col gap-y-8">
-            {projects.map((proj, idx) => (
-              <ProjectCard
-                key={idx}
-                name={proj.name}
-                description={proj.description}
-                features={proj.features}
-                techStack={proj.techStack}
-                links={proj.links}
-              />
-            ))}
+          <div className="flex flex-col gap-y-6">
+            <div className="flex flex-col gap-y-1">
+              <h4 className="text-foreground text-sm font-semibold">Trinetra</h4>
+              <p className="text-xs text-secondary/85 leading-relaxed">
+                AI-powered public safety dashboard built for large gatherings. Features computer vision threat detection and multi-agent coordination.
+              </p>
+            </div>
+            
+            <div className="flex flex-col gap-y-1">
+              <h4 className="text-foreground text-sm font-semibold">CureConnect</h4>
+              <p className="text-xs text-secondary/85 leading-relaxed">
+                Telemedicine platform utilizing WebRTC and IVR call systems to make healthcare accessible in offline and remote regions.
+              </p>
+            </div>
+            
+            <Link
+              href="/projects"
+              className="text-xs text-foreground font-mono font-medium inline-flex items-center gap-1.5 hover:underline underline-offset-4 w-fit pt-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground/50 rounded"
+              id="view-all-projects-link"
+            >
+              View all projects with visual mockups and source links →
+            </Link>
           </div>
         </Section>
 
@@ -297,7 +251,7 @@ export default function Home() {
                 key={social.label}
                 href={social.href}
                 id={social.id}
-                className="text-secondary hover:text-foreground transition-colors link-underline font-medium"
+                className="text-secondary hover:text-foreground transition-colors link-underline font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground/50 rounded"
                 target={social.href.startsWith("mailto:") ? undefined : "_blank"}
                 rel={social.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
               >

@@ -12,69 +12,69 @@ interface ProjectItem {
   links: { label: string; href: string; type: "live" | "repo" }[];
 }
 
+const allProjects: ProjectItem[] = [
+  {
+    name: "Trinetra",
+    description: "An AI-powered public safety platform engineered for large gatherings and events. Processes video feeds and triggers automated emergency coordination protocols dynamically.",
+    features: [
+      "Multi-agent system dispatching alerts based on threat severity",
+      "Computer Vision CCTV models tracking crowding and anomalies",
+      "Twilio automated IVR system for emergency responses",
+      "Multilingual voice-assisted SOS portal",
+    ],
+    techStack: ["Next.js", "Node.js", "Flask", "Firebase", "Gemini", "Twilio", "VideoSDK"],
+    imagePath: "/trinetra.png",
+    links: [
+      { label: "Live Preview", href: "https://trinetra.nexentia.in", type: "live" },
+      { label: "Repo Url", href: "https://github.com/samarthkolarkar/trinetra", type: "repo" },
+    ],
+  },
+  {
+    name: "CureConnect",
+    description: "A comprehensive telemedicine and healthcare delivery network focused on accessibility in remote communities, integrating smart diagnosis and automated IVRS scheduling.",
+    features: [
+      "WebRTC consultation rooms with real-time symptoms summaries",
+      "AI Diagnostic agent identifying primary illness metrics",
+      "Integrated telephony routing offline calls to local doctors",
+      "Google Maps API tracking and directing to nearby clinics",
+    ],
+    techStack: ["Next.js", "Node.js", "WebSockets", "Google Maps", "Exotel", "AI Models"],
+    imagePath: "/cureconnect.png",
+    links: [
+      { label: "Live Preview", href: "https://cureconnect.nexentia.in", type: "live" },
+      { label: "Repo Url", href: "https://github.com/samarthkolarkar/cureconnect", type: "repo" },
+    ],
+  },
+  {
+    name: "DevFlow",
+    description: "An automated developer agent checking branch code quality, highlighting complexity spikes, identifying race conditions, and commenting directly on GitHub pull requests.",
+    features: [
+      "Automated webhook hook integration parsing AST trees",
+      "Gemini LLM model reviewing diffs for performance flaws",
+      "Direct inline code suggestion comments injected via Git APIs",
+    ],
+    techStack: ["Node.js", "TypeScript", "Gemini API", "GitHub Actions", "Webhooks"],
+    links: [
+      { label: "Repo Url", href: "https://github.com/samarthkolarkar/devflow", type: "repo" },
+    ],
+  },
+  {
+    name: "EcoLogix",
+    description: "A green route-optimization engine for logistic systems. Won a national-level hackathon. Computes energy-efficient dispatch vectors based on carbon coefficients.",
+    features: [
+      "Carbon footprint mapping algorithm using traffic history data",
+      "Interactive route planning map visualizing fleet emissions",
+      "Reduces average vehicle carbon output by 18% in test mock scenarios",
+    ],
+    techStack: ["Python", "Flask", "PostgreSQL", "React", "Google Maps API"],
+    links: [
+      { label: "Repo Url", href: "https://github.com/samarthkolarkar/ecologix", type: "repo" },
+    ],
+  },
+];
+
 export default function ProjectsPage() {
   const [searchQuery, setSearchQuery] = useState("");
-
-  const allProjects: ProjectItem[] = [
-    {
-      name: "Trinetra",
-      description: "An AI-powered public safety platform engineered for large gatherings and events. Processes video feeds and triggers automated emergency coordination protocols dynamically.",
-      features: [
-        "Multi-agent system dispatching alerts based on threat severity",
-        "Computer Vision CCTV models tracking crowding and anomalies",
-        "Twilio automated IVR system for emergency responses",
-        "Multilingual voice-assisted SOS portal",
-      ],
-      techStack: ["Next.js", "Node.js", "Flask", "Firebase", "Gemini", "Twilio", "VideoSDK"],
-      imagePath: "/trinetra.png",
-      links: [
-        { label: "Live Preview", href: "https://trinetra.nexentia.in", type: "live" },
-        { label: "Repo Url", href: "https://github.com/samarthkolarkar/trinetra", type: "repo" },
-      ],
-    },
-    {
-      name: "CureConnect",
-      description: "A comprehensive telemedicine and healthcare delivery network focused on accessibility in remote communities, integrating smart diagnosis and automated IVRS scheduling.",
-      features: [
-        "WebRTC consultation rooms with real-time symptoms summaries",
-        "AI Diagnostic agent identifying primary illness metrics",
-        "Integrated telephony routing offline calls to local doctors",
-        "Google Maps API tracking and directing to nearby clinics",
-      ],
-      techStack: ["Next.js", "Node.js", "WebSockets", "Google Maps", "Exotel", "AI Models"],
-      imagePath: "/cureconnect.png",
-      links: [
-        { label: "Live Preview", href: "https://cureconnect.nexentia.in", type: "live" },
-        { label: "Repo Url", href: "https://github.com/samarthkolarkar/cureconnect", type: "repo" },
-      ],
-    },
-    {
-      name: "DevFlow",
-      description: "An automated developer agent checking branch code quality, highlighting complexity spikes, identifying race conditions, and commenting directly on GitHub pull requests.",
-      features: [
-        "Automated webhook hook integration parsing AST trees",
-        "Gemini LLM model reviewing diffs for performance flaws",
-        "Direct inline code suggestion comments injected via Git APIs",
-      ],
-      techStack: ["Node.js", "TypeScript", "Gemini API", "GitHub Actions", "Webhooks"],
-      links: [
-        { label: "Repo Url", href: "https://github.com/samarthkolarkar/devflow", type: "repo" },
-      ],
-    },
-    {
-      name: "EcoLogix",
-      description: "A green route-optimization engine for logistic systems. Won a national-level hackathon. Computes energy-efficient dispatch vectors based on carbon coefficients.",
-      features: [
-        "Carbon footprint mapping algorithm using traffic history data",
-        "Interactive route planning map visualizing fleet emissions",
-        "Reduces average vehicle carbon output by 18% in test mock scenarios",
-      ],
-      techStack: ["Python", "Flask", "PostgreSQL", "React", "Google Maps API"],
-      links: [
-        { label: "Repo Url", href: "https://github.com/samarthkolarkar/ecologix", type: "repo" },
-      ],
-    },
-  ];
 
   // Client-side filtering logic
   const filteredProjects = useMemo(() => {
@@ -129,7 +129,7 @@ export default function ProjectsPage() {
         {/* Dynamic Project grid layout */}
         {filteredProjects.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-14 animate-fade-in delay-150">
-            {filteredProjects.map((project, idx) => (
+            {filteredProjects.map((project) => (
               <ProjectCard
                 key={project.name}
                 name={project.name}

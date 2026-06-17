@@ -73,10 +73,10 @@ export default function Home() {
   ];
 
   const socialLinks = [
-    { label: "GitHub", href: "https://github.com/samarthkolarkar", id: "social-github" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/samarthkolarkar", id: "social-linkedin" },
-    { label: "Twitter / X", href: "https://x.com/samarthkolarkar", id: "social-twitter" },
-    { label: "Email", href: "mailto:samarthkolarkar@gmail.com", id: "social-email" },
+    { label: "GitHub", href: "https://github.com/Erennn7/", id: "social-github" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/samarth-kolarkar/", id: "social-linkedin" },
+    { label: "Twitter / X", href: "https://x.com/SamarthKolarkar", id: "social-twitter" },
+    { label: "Email", href: "mailto:samarthkolarkar7777@gmail.com", id: "social-email" },
   ];
 
   return (

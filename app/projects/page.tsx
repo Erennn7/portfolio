@@ -26,7 +26,7 @@ const allProjects: ProjectItem[] = [
     imagePath: "/trinetra.png",
     links: [
       { label: "Live Preview", href: "https://trinetra.nexentia.in", type: "live" },
-      { label: "Repo Url", href: "https://github.com/samarthkolarkar/trinetra", type: "repo" },
+      { label: "Repo Url", href: "https://github.com/Erennn7/trinetra", type: "repo" },
     ],
   },
   {
@@ -42,7 +42,7 @@ const allProjects: ProjectItem[] = [
     imagePath: "/cureconnect.png",
     links: [
       { label: "Live Preview", href: "https://cureconnect.nexentia.in", type: "live" },
-      { label: "Repo Url", href: "https://github.com/samarthkolarkar/cureconnect", type: "repo" },
+      { label: "Repo Url", href: "https://github.com/Erennn7/cureconnect", type: "repo" },
     ],
   },
   {

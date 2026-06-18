@@ -21,7 +21,7 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: "Samarth Kolarkar — Engineer, Builder, Co-Founder",
-  description: "Personal homepage of Samarth Kolarkar. 20-year-old engineer, co-founder of Nexentia, hackathon winner, and open-source contributor. Interested in AI agents, systems, and startups.",
+  description: "Personal homepage of Samarth Kolarkar. 21-year-old engineer, co-founder of Nexentia, hackathon winner, and open-source contributor. Interested in AI agents, systems, and startups.",
   keywords: [
     "Samarth Kolarkar",
     "Nexentia",
@@ -35,14 +35,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Samarth Kolarkar" }],
   openGraph: {
     title: "Samarth Kolarkar — Engineer, Builder, Co-Founder",
-    description: "Personal homepage of Samarth Kolarkar. 20-year-old engineer, co-founder of Nexentia, hackathon winner, and open-source contributor.",
+    description: "Personal homepage of Samarth Kolarkar. 21-year-old engineer, co-founder of Nexentia, hackathon winner, and open-source contributor.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary",
     title: "Samarth Kolarkar — Engineer, Builder, Co-Founder",
-    description: "Personal homepage of Samarth Kolarkar. 20-year-old engineer, co-founder of Nexentia, hackathon winner, and open-source contributor.",
+    description: "Personal homepage of Samarth Kolarkar. 21-year-old engineer, co-founder of Nexentia, hackathon winner, and open-source contributor.",
   }
 };
 

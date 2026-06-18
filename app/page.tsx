@@ -87,7 +87,7 @@ export default function Home() {
         {/* Hero Section */}
         <section id="hero" className="flex flex-col animate-fade-in delay-75">
           <h1 className="font-serif italic text-4xl md:text-5xl font-normal tracking-tight text-foreground">
-            Samarth, 20
+            Samarth, 21
           </h1>
           <p className="text-secondary/90 text-lg md:text-xl font-normal mt-3 max-w-[560px] leading-relaxed">
             Engineer who loves building systems that solve messy, real-world problems.

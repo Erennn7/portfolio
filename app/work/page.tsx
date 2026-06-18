@@ -52,7 +52,7 @@ export default function WorkPage() {
           <h1 className="font-serif italic text-3xl md:text-4xl text-foreground font-normal tracking-tight mb-3">
             Professional Experience
           </h1>
-          <p className="text-secondary/80 text-sm md:text-base max-w-[580px] leading-relaxed">
+          <p className="text-secondary text-sm md:text-base max-w-[580px] leading-relaxed">
             I build software systems that solve operational problems. Here is a timeline of where I have worked, what I have built, and the architectural trade-offs I made along the way.
           </p>
         </div>
@@ -69,12 +69,12 @@ export default function WorkPage() {
                 <h2 className="text-foreground text-xl font-medium">
                   {exp.company}
                 </h2>
-                <span className="text-xs text-secondary/70 font-mono">{exp.period}</span>
+                <span className="text-xs text-secondary/90 font-mono">{exp.period}</span>
               </div>
-              <p className="text-xs text-secondary/90 italic -mt-2">{exp.role}</p>
+              <p className="text-xs text-secondary italic -mt-2">{exp.role}</p>
 
               {/* Narratives */}
-              <p className="text-secondary/85 text-sm leading-relaxed mt-2">
+              <p className="text-secondary/95 text-sm leading-relaxed mt-2">
                 {exp.description}
               </p>
 
@@ -90,14 +90,14 @@ export default function WorkPage() {
                       className="border border-border-custom bg-border-custom/5 p-4 rounded-md flex flex-col gap-y-1.5"
                     >
                       <h4 className="text-foreground text-sm font-semibold">{proj.title}</h4>
-                      <p className="text-xs text-secondary/80 leading-relaxed">{proj.details}</p>
+                      <p className="text-xs text-secondary/95 leading-relaxed">{proj.details}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Retrospective / learnings */}
-              <div className="mt-4 border-l-2 border-border-custom pl-4 py-1 italic text-secondary/75 text-xs md:text-sm leading-relaxed">
+              <div className="mt-4 border-l-2 border-border-custom pl-4 py-1 italic text-secondary/90 text-xs md:text-sm leading-relaxed">
                 <span className="font-mono text-[10px] uppercase tracking-wider block text-foreground/70 not-italic mb-1 font-semibold">
                   Takeaway & Learning
                 </span>
@@ -108,7 +108,7 @@ export default function WorkPage() {
         </div>
       </main>
 
-      <footer className="w-full flex justify-between items-center mt-24 pt-8 border-t border-border-custom/40 text-xs text-secondary/50 font-mono animate-fade-in delay-300">
+      <footer className="w-full flex flex-col sm:flex-row gap-y-2 justify-between items-center mt-24 pt-8 border-t border-border-custom/40 text-xs text-secondary font-mono animate-fade-in delay-300">
         <span>© {new Date().getFullYear()} Samarth Kolarkar</span>
         <span>Solapur, India</span>
       </footer>

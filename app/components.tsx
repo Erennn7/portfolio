@@ -1,24 +1,55 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-// Minimal Navbar Component
+// Minimal Navbar Component with Dark/Light Toggle
 export function Navbar() {
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    
+    if (savedTheme) {
+      setTheme(savedTheme);
+      document.documentElement.classList.toggle("dark", savedTheme === "dark");
+      document.documentElement.classList.toggle("light", savedTheme === "light");
+    } else {
+      const defaultTheme = systemPrefersDark ? "dark" : "light";
+      setTheme(defaultTheme);
+      document.documentElement.classList.toggle("dark", defaultTheme === "dark");
+      document.documentElement.classList.toggle("light", defaultTheme === "light");
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    localStorage.setItem("theme", nextTheme);
+    document.documentElement.classList.toggle("dark", nextTheme === "dark");
+    document.documentElement.classList.toggle("light", nextTheme === "light");
+  };
+
   const navItems = [
     { label: "About", href: "/#about" },
     { label: "Work", href: "/work" },
     { label: "Projects", href: "/projects" },
     { label: "Writing", href: "/#writing" },
     { label: "Contact", href: "/#contact" },
-    { label: "Resume", href: "/resume.pdf", external: true },
+    { label: "Resume", href: "/samarths-resume-26.pdf", external: true },
   ];
 
   return (
-    <nav className="w-full flex justify-between items-center py-6 border-b border-border-custom mb-16 animate-fade-in">
-      <Link href="/" className="font-serif italic text-xl tracking-tight text-foreground hover:opacity-80 transition-opacity">
+    <nav className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center py-6 border-b border-border-custom mb-16 gap-y-4 animate-fade-in">
+      <Link href="/" className="font-serif italic text-2xl tracking-tight text-foreground hover:opacity-80 transition-opacity">
         sk.
       </Link>
-      <div className="flex gap-x-5 md:gap-x-6 text-sm">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 md:gap-x-6 text-sm w-full sm:w-auto justify-start sm:justify-end">
         {navItems.map((item) => {
           const LinkComponent = item.external ? "a" : Link;
           return (
@@ -34,6 +65,59 @@ export function Navbar() {
             </LinkComponent>
           );
         })}
+        
+        {/* Modern Hydration-Safe Theme Toggle Button */}
+        <button
+          onClick={toggleTheme}
+          className="text-secondary hover:text-foreground transition-colors p-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 rounded-md ml-1 bg-border-custom/30 border border-border-custom/80 hover:bg-border-custom/60"
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+        >
+          {mounted ? (
+            theme === "dark" ? (
+              // Sun Icon (switching to light mode)
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-3.5 h-3.5"
+              >
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2" />
+                <path d="M12 20v2" />
+                <path d="m4.93 4.93 1.41 1.41" />
+                <path d="m17.66 17.66 1.41 1.41" />
+                <path d="M2 12h2" />
+                <path d="M20 12h2" />
+                <path d="m6.34 17.66-1.41 1.41" />
+                <path d="m19.07 4.93-1.41 1.41" />
+              </svg>
+            ) : (
+              // Moon Icon (switching to dark mode)
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-3.5 h-3.5"
+              >
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+              </svg>
+            )
+          ) : (
+            <div className="w-3.5 h-3.5" />
+          )}
+        </button>
       </div>
     </nav>
   );
@@ -95,12 +179,12 @@ export function TimelineItem({ company, role, period, highlights }: TimelineItem
         <h3 className="text-foreground font-medium text-base group-hover:text-white transition-colors">
           {company}
         </h3>
-        <span className="text-xs text-secondary/70 font-mono">{period}</span>
+        <span className="text-xs text-secondary/90 font-mono">{period}</span>
       </div>
       <p className="text-xs text-secondary/90 italic -mt-1">{role}</p>
       <ul className="mt-2 flex flex-col gap-y-1.5">
         {highlights.map((highlight, index) => (
-          <li key={index} className="custom-list-dot text-secondary/85 text-xs md:text-sm pl-4">
+          <li key={index} className="custom-list-dot text-secondary text-xs md:text-sm pl-4">
             {highlight}
           </li>
         ))}
@@ -142,12 +226,12 @@ export function ProjectCard({ name, description, features, techStack, imagePath,
       </h3>
       
       {/* Tech tag list separated by slashes */}
-      <p className="text-secondary/60 text-xs font-mono mt-1 mb-2">
+      <p className="text-secondary/80 text-xs font-mono mt-1 mb-2">
         {techStack.join(" / ")}
       </p>
       
       {/* Description */}
-      <p className="text-secondary/85 text-sm mb-3 leading-relaxed">
+      <p className="text-secondary text-sm mb-3 leading-relaxed">
         {description}
       </p>
 
@@ -155,7 +239,7 @@ export function ProjectCard({ name, description, features, techStack, imagePath,
       {features && features.length > 0 && (
         <ul className="mb-4 flex flex-col gap-y-1 pl-4">
           {features.map((feat, idx) => (
-            <li key={idx} className="custom-list-dot text-xs text-secondary/70">
+            <li key={idx} className="custom-list-dot text-xs text-secondary/90">
               {feat}
             </li>
           ))}
@@ -219,7 +303,7 @@ export function ProjectCard({ name, description, features, techStack, imagePath,
 // StackPill Component
 export function StackPill({ label }: { label: string }) {
   return (
-    <span className="bg-border-custom/40 border border-border-custom px-2.5 py-0.5 rounded text-[11px] font-mono text-secondary/90 hover:text-foreground hover:border-secondary/40 transition-colors">
+    <span className="bg-border-custom/40 border border-border-custom px-2.5 py-0.5 rounded text-[11px] font-mono text-secondary hover:text-foreground hover:border-secondary/40 transition-colors">
       {label}
     </span>
   );
@@ -243,9 +327,9 @@ export function WritingItem({ title, excerpt, date = "Draft", slug = "#" }: Writ
         <h3 className="text-foreground text-sm md:text-base font-medium group-hover:text-white transition-colors link-underline w-fit">
           {title}
         </h3>
-        <p className="text-xs text-secondary/70 line-clamp-1">{excerpt}</p>
+        <p className="text-xs text-secondary line-clamp-1">{excerpt}</p>
       </div>
-      <span className="text-xs text-secondary/60 font-mono whitespace-nowrap md:text-right">{date}</span>
+      <span className="text-xs text-secondary/80 font-mono whitespace-nowrap md:text-right">{date}</span>
     </a>
   );
 }

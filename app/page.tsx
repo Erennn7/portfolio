@@ -89,11 +89,11 @@ export default function Home() {
           <h1 className="font-serif italic text-4xl md:text-5xl font-normal tracking-tight text-foreground">
             Samarth, 21
           </h1>
-          <p className="text-secondary/90 text-lg md:text-xl font-normal mt-3 max-w-[560px] leading-relaxed">
+          <p className="text-secondary text-lg md:text-xl font-normal mt-3 max-w-[560px] leading-relaxed">
             Engineer who loves building systems that solve messy, real-world problems.
           </p>
           
-          <div className="text-secondary/80 text-sm md:text-[15px] space-y-4 max-w-[580px] leading-relaxed mt-6">
+          <div className="text-secondary text-sm md:text-[15px] space-y-4 max-w-[580px] leading-relaxed mt-6">
             <p>
               I’m co-founding{" "}
               <a href="https://github.com/nexentia-in" className="text-foreground hover:underline underline-offset-4 decoration-1 font-medium" target="_blank" rel="noopener noreferrer">
@@ -131,10 +131,10 @@ export default function Home() {
             <div className="flex flex-col gap-y-1">
               <div className="flex justify-between items-baseline">
                 <span className="text-foreground text-sm font-semibold">Co-Founder & Full Stack Developer</span>
-                <span className="text-xs text-secondary/60 font-mono">2025 — Present</span>
+                <span className="text-xs text-secondary/85 font-mono">2025 — Present</span>
               </div>
-              <span className="text-xs text-secondary/80">Nexentia</span>
-              <p className="text-xs text-secondary/75 mt-1 leading-relaxed">
+              <span className="text-xs text-secondary">Nexentia</span>
+              <p className="text-xs text-secondary/95 mt-1 leading-relaxed">
                 Co-founded a software solutions agency to build production systems across healthcare, retail, hospitality, and logistics.
               </p>
             </div>
@@ -142,10 +142,10 @@ export default function Home() {
             <div className="flex flex-col gap-y-1">
               <div className="flex justify-between items-baseline">
                 <span className="text-foreground text-sm font-semibold">MERN + GenAI Intern</span>
-                <span className="text-xs text-secondary/60 font-mono">2025</span>
+                <span className="text-xs text-secondary/85 font-mono">2025</span>
               </div>
-              <span className="text-xs text-secondary/80">ANK Upsurge Digital</span>
-              <p className="text-xs text-secondary/75 mt-1 leading-relaxed">
+              <span className="text-xs text-secondary">ANK Upsurge Digital</span>
+              <p className="text-xs text-secondary/95 mt-1 leading-relaxed">
                 Built AI task managers and streamed real-time summaries using Node.js and the Vercel AI SDK.
               </p>
             </div>
@@ -165,7 +165,7 @@ export default function Home() {
           <div className="flex flex-col gap-y-4">
             {wins.map((win, idx) => (
               <div key={idx} className="flex gap-x-3 items-start">
-                <span className="text-secondary/90 text-sm md:text-[15px]">{win.text}</span>
+                <span className="text-secondary text-sm md:text-[15px]">{win.text}</span>
               </div>
             ))}
           </div>
@@ -179,14 +179,14 @@ export default function Home() {
           <div className="flex flex-col gap-y-6">
             <div className="flex flex-col gap-y-1">
               <h4 className="text-foreground text-sm font-semibold">Trinetra</h4>
-              <p className="text-xs text-secondary/85 leading-relaxed">
+              <p className="text-xs text-secondary/95 leading-relaxed">
                 AI-powered public safety dashboard built for large gatherings. Features computer vision threat detection and multi-agent coordination.
               </p>
             </div>
             
             <div className="flex flex-col gap-y-1">
               <h4 className="text-foreground text-sm font-semibold">CureConnect</h4>
-              <p className="text-xs text-secondary/85 leading-relaxed">
+              <p className="text-xs text-secondary/95 leading-relaxed">
                 Telemedicine platform utilizing WebRTC and IVR call systems to make healthcare accessible in offline and remote regions.
               </p>
             </div>
@@ -219,7 +219,7 @@ export default function Home() {
             {philosophies.map((philo, idx) => (
               <div key={idx} className="flex flex-col gap-y-1">
                 <h4 className="text-foreground text-sm font-medium">{philo.text}</h4>
-                <p className="text-xs text-secondary/80">{philo.detail}</p>
+                <p className="text-xs text-secondary/95">{philo.detail}</p>
               </div>
             ))}
           </div>
@@ -262,7 +262,7 @@ export default function Home() {
         </Section>
       </main>
 
-      <footer className="w-full flex justify-between items-center mt-24 pt-8 border-t border-border-custom/40 text-xs text-secondary/50 font-mono animate-fade-in delay-600">
+      <footer className="w-full flex flex-col sm:flex-row gap-y-2 justify-between items-center mt-24 pt-8 border-t border-border-custom/40 text-xs text-secondary font-mono animate-fade-in delay-600">
         <span>© {new Date().getFullYear()} Samarth Kolarkar</span>
         <span>Solapur, India</span>
       </footer>

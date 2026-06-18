@@ -1,10 +1,28 @@
 @import "tailwindcss";
 
+/* Design Tokens & Theme Variables */
 :root {
+  /* Default is Dark Mode */
   --background: #050505;
   --foreground: #F5F5F5;
-  --secondary: #A1A1AA;
-  --border-custom: #18181B;
+  --secondary: #C4C4C4; /* Brighter, high-contrast gray for better legibility */
+  --border-custom: #1a1a20;
+}
+
+/* Light Theme Overrides */
+html.light, :root.light {
+  --background: #FAFAFA;
+  --foreground: #121212;
+  --secondary: #555555; /* Higher contrast muted text for light theme */
+  --border-custom: #E4E4E7;
+}
+
+/* Explicit Dark Theme overrides */
+html.dark, :root.dark {
+  --background: #050505;
+  --foreground: #F5F5F5;
+  --secondary: #C4C4C4;
+  --border-custom: #1a1a20;
 }
 
 @theme inline {
@@ -17,6 +35,7 @@
   --font-mono: var(--font-geist-mono), monospace;
 }
 
+/* Body global layouts and smooth theme transitions */
 body {
   background-color: var(--background);
   color: var(--foreground);
@@ -24,19 +43,33 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              color 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Universal borders transition for smooth dark/light changes */
+*, *::before, *::after {
+  transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Custom interactive selections */
 ::selection {
   background-color: rgba(245, 245, 245, 0.08);
-  color: #F5F5F5;
+  color: var(--foreground);
+}
+
+html.light ::selection {
+  background-color: rgba(18, 18, 18, 0.06);
+  color: var(--foreground);
 }
 
 /* Custom micro-interactions and animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
@@ -46,7 +79,7 @@ body {
 
 .animate-fade-in {
   opacity: 0;
-  animation: fadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .delay-75 {
@@ -115,5 +148,5 @@ body {
   position: absolute;
   left: 0;
   color: var(--secondary);
-  opacity: 0.6;
+  opacity: 0.85;
 }

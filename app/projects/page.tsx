@@ -113,7 +113,7 @@ export default function ProjectsPage() {
               placeholder="Search Projects..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-border-custom/20 border border-border-custom/90 px-4 py-2 pl-9 text-sm text-foreground placeholder-secondary/50 rounded-md focus:outline-none focus:border-secondary/40 transition-colors focus:ring-1 focus:ring-secondary/20"
+              className="w-full bg-border-custom/20 border border-border-custom/90 px-4 py-2 pl-9 text-sm text-foreground placeholder-secondary/80 rounded-md focus:outline-none focus:border-secondary/40 transition-colors focus:ring-1 focus:ring-secondary/35"
               id="projects-search-input"
             />
             <svg
@@ -126,7 +126,7 @@ export default function ProjectsPage() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-secondary/50"
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-secondary/80"
             >
               <circle cx="11" cy="11" r="8" />
               <path d="m21 21-4.3-4.3" />
@@ -162,7 +162,7 @@ export default function ProjectsPage() {
         )}
       </main>
 
-      <footer className="w-full flex justify-between items-center mt-24 pt-8 border-t border-border-custom/40 text-xs text-secondary/50 font-mono animate-fade-in delay-300">
+      <footer className="w-full flex flex-col sm:flex-row gap-y-2 justify-between items-center mt-24 pt-8 border-t border-border-custom/40 text-xs text-secondary font-mono animate-fade-in delay-300">
         <span>© {new Date().getFullYear()} Samarth Kolarkar</span>
         <span>Solapur, India</span>
       </footer>

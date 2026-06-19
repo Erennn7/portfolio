@@ -103,7 +103,7 @@ export default function Home() {
                 alt="Samarth Kolarkar"
                 fill
                 sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 112px"
-                className="object-cover transition-all duration-500 group-hover:scale-105 group-hover:rotate-3"
+                className="object-cover transition-all duration-500 group-hover:scale-[1.03]"
                 priority
               />
             </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Navbar,
   StatusBadge,
@@ -86,12 +87,27 @@ export default function Home() {
       <main className="flex flex-col gap-y-20">
         {/* Hero Section */}
         <section id="hero" className="flex flex-col animate-fade-in delay-75">
-          <h1 className="font-serif italic text-4xl md:text-5xl font-normal tracking-tight text-foreground">
-            Samarth, 21
-          </h1>
-          <p className="text-secondary text-lg md:text-xl font-normal mt-3 max-w-[560px] leading-relaxed">
-            Engineer who loves building systems that solve messy, real-world problems.
-          </p>
+          <div className="flex flex-col-reverse sm:flex-row justify-between items-start gap-6 sm:gap-8">
+            <div className="flex flex-col flex-1">
+              <h1 className="font-serif italic text-4xl md:text-5xl font-normal tracking-tight text-foreground">
+                Samarth, 21
+              </h1>
+              <p className="text-secondary text-lg md:text-xl font-normal mt-3 max-w-[520px] leading-relaxed">
+                Engineer who loves building systems that solve messy, real-world problems.
+              </p>
+            </div>
+            
+            <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex-shrink-0 self-start rounded-full border border-border-custom bg-border-custom/20 overflow-hidden group">
+              <Image
+                src="/profile.jpeg"
+                alt="Samarth Kolarkar"
+                fill
+                sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 112px"
+                className="object-cover transition-all duration-500 group-hover:scale-105 group-hover:rotate-3"
+                priority
+              />
+            </div>
+          </div>
           
           <div className="text-secondary text-sm md:text-[15px] space-y-4 max-w-[580px] leading-relaxed mt-6">
             <p>

@@ -39,7 +39,7 @@ export function Navbar() {
     { label: "About", href: "/#about" },
     { label: "Work", href: "/work" },
     { label: "Projects", href: "/projects" },
-    { label: "Writing", href: "/#writing" },
+    { label: "Writing", href: "/writing" },
     { label: "Contact", href: "/#contact" },
     { label: "Resume", href: "/samarths-resume-26.pdf", external: true },
   ];

@@ -57,8 +57,33 @@ export default function WorkPage() {
           </p>
         </div>
 
+        {/* Achievements / A Few Wins */}
+        <div className="mb-16 animate-fade-in delay-150 border-b border-border-custom pb-12">
+          <h2 className="font-serif italic text-2xl text-foreground font-normal tracking-tight mb-4">
+            A Few Wins
+          </h2>
+          <ul className="flex flex-col gap-y-3">
+            <li className="flex gap-x-2 text-secondary text-sm leading-relaxed">
+              <span>🏆</span>
+              <span>Won 4 national-level hackathons against hundreds of competing teams</span>
+            </li>
+            <li className="flex gap-x-2 text-secondary text-sm leading-relaxed">
+              <span>⚡</span>
+              <span>Contributed 20+ merged pull requests to <a href="https://github.com/stdlib-js/stdlib" target="_blank" rel="noopener noreferrer" className="text-foreground hover:underline font-mono">stdlib-js</a> (JavaScript standard library)</span>
+            </li>
+            <li className="flex gap-x-2 text-secondary text-sm leading-relaxed">
+              <span>🚀</span>
+              <span>Shipped multiple production systems actively used by real businesses</span>
+            </li>
+            <li className="flex gap-x-2 text-secondary text-sm leading-relaxed">
+              <span>🤝</span>
+              <span>Co-founded a software solutions company (Nexentia) while pursuing engineering</span>
+            </li>
+          </ul>
+        </div>
+
         {/* Detailed Timeline list */}
-        <div className="flex flex-col gap-y-16 animate-fade-in delay-150">
+        <div className="flex flex-col gap-y-16 animate-fade-in delay-225">
           {experiences.map((exp) => (
             <section
               key={exp.company}

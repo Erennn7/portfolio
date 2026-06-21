@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Navbar, ProjectCard } from "../components";
+import { Navbar, ProjectCard, StackPill } from "../components";
 
 interface ProjectItem {
   name: string;
@@ -11,6 +11,27 @@ interface ProjectItem {
   imagePath?: string;
   links: { label: string; href: string; type: "live" | "repo" }[];
 }
+
+const techStack = [
+  "JavaScript",
+  "TypeScript",
+  "Python",
+  "React",
+  "Next.js",
+  "Node.js",
+  "Express",
+  "PostgreSQL",
+  "Prisma",
+  "Docker",
+  "Firebase",
+  "MongoDB",
+  "WebSockets",
+  "AI Agents",
+  "RAG",
+  "Linux",
+  "Git",
+  "GitHub",
+];
 
 const allProjects: ProjectItem[] = [
   {
@@ -134,9 +155,21 @@ export default function ProjectsPage() {
           </div>
         </div>
 
+        {/* Tech Stack directory */}
+        <div className="mb-16 animate-fade-in delay-150 border-b border-border-custom pb-12">
+          <h2 className="font-serif italic text-2xl text-foreground font-normal tracking-tight mb-4">
+            Tech Directory
+          </h2>
+          <div className="flex flex-wrap gap-2">
+            {techStack.map((tech) => (
+              <StackPill key={tech} label={tech} />
+            ))}
+          </div>
+        </div>
+
         {/* Dynamic Project grid layout */}
         {filteredProjects.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-14 animate-fade-in delay-150">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-14 animate-fade-in delay-225">
             {filteredProjects.map((project) => (
               <ProjectCard
                 key={project.name}

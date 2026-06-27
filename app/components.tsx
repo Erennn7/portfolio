@@ -40,7 +40,7 @@ export function Navbar() {
     { label: "Work", href: "/work" },
     { label: "Projects", href: "/projects" },
     { label: "Writing", href: "/writing" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Contact", href: "/contact" },
     { label: "Resume", href: "/samarths-resume-26.pdf", external: true },
   ];
 

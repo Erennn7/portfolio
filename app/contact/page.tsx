@@ -1,4 +1,5 @@
 import { Navbar, Section } from "../components";
+import { ContactForm } from "./ContactForm";
 
 export const metadata = {
   title: "Contact — Samarth Kolarkar",
@@ -52,7 +53,13 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <Section id="connect" title="Connect" delayClass="delay-150">
+        {/* Message Form Section */}
+        <Section id="message" title="Send a Message" delayClass="delay-150">
+          <ContactForm />
+        </Section>
+
+        {/* Social Connect Section */}
+        <Section id="connect" title="Connect" delayClass="delay-225">
           <div className="flex flex-col gap-y-6 w-full">
             {socialLinks.map((social) => (
               <div key={social.label} className="group border-b border-border-custom/30 pb-6 last:border-b-0">

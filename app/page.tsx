@@ -4,6 +4,7 @@ import {
   StatusBadge,
   Section,
 } from "./components";
+import { ContactForm } from "./contact/ContactForm";
 
 export default function Home() {
   const socialLinks = [
@@ -73,10 +74,11 @@ export default function Home() {
 
         {/* Contact Section */}
         <Section id="contact" title="Contact" delayClass="delay-225">
-          <p className="text-base text-foreground mb-4">
+          <p className="text-base text-foreground">
             Let’s build something interesting.
           </p>
-          <div className="flex flex-wrap gap-x-6 gap-y-3 font-mono text-xs">
+          <ContactForm />
+          <div className="flex flex-wrap gap-x-6 gap-y-3 font-mono text-xs pt-2">
             {socialLinks.map((social) => (
               <a
                 key={social.label}

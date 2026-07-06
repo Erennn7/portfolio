@@ -47,9 +47,9 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-y-6 w-full max-w-[580px]">
-      <div className="flex flex-col gap-y-1.5">
-        <label htmlFor="form-name" className="font-mono text-xs text-secondary font-medium tracking-wide uppercase">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-y-4 w-full max-w-[580px]">
+      <div className="flex flex-col gap-y-1">
+        <label htmlFor="form-name" className="font-mono text-[10px] text-secondary font-medium tracking-wide uppercase">
           Name
         </label>
         <input
@@ -60,13 +60,13 @@ export function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           disabled={status === "submitting"}
-          placeholder="Samarth Kolarkar"
-          className="w-full bg-border-custom/10 border border-border-custom px-4 py-3 text-sm text-foreground placeholder-secondary/50 rounded-md focus:outline-none focus:border-foreground/50 focus:ring-1 focus:ring-foreground/40 transition-all duration-200 disabled:opacity-50"
+          placeholder="your name"
+          className="w-full bg-border-custom/10 border border-border-custom px-3 py-2 text-sm text-foreground placeholder-secondary/50 rounded-md focus:outline-none focus:border-foreground/50 focus:ring-1 focus:ring-foreground/40 transition-all duration-200 disabled:opacity-50"
         />
       </div>
 
-      <div className="flex flex-col gap-y-1.5">
-        <label htmlFor="form-email" className="font-mono text-xs text-secondary font-medium tracking-wide uppercase">
+      <div className="flex flex-col gap-y-1">
+        <label htmlFor="form-email" className="font-mono text-[10px] text-secondary font-medium tracking-wide uppercase">
           Email Address
         </label>
         <input
@@ -78,32 +78,32 @@ export function ContactForm() {
           onChange={handleChange}
           disabled={status === "submitting"}
           placeholder="you@example.com"
-          className="w-full bg-border-custom/10 border border-border-custom px-4 py-3 text-sm text-foreground placeholder-secondary/50 rounded-md focus:outline-none focus:border-foreground/50 focus:ring-1 focus:ring-foreground/40 transition-all duration-200 disabled:opacity-50"
+          className="w-full bg-border-custom/10 border border-border-custom px-3 py-2 text-sm text-foreground placeholder-secondary/50 rounded-md focus:outline-none focus:border-foreground/50 focus:ring-1 focus:ring-foreground/40 transition-all duration-200 disabled:opacity-50"
         />
       </div>
 
-      <div className="flex flex-col gap-y-1.5">
-        <label htmlFor="form-message" className="font-mono text-xs text-secondary font-medium tracking-wide uppercase">
+      <div className="flex flex-col gap-y-1">
+        <label htmlFor="form-message" className="font-mono text-[10px] text-secondary font-medium tracking-wide uppercase">
           Message
         </label>
         <textarea
           name="message"
           id="form-message"
           required
-          rows={5}
+          rows={3}
           value={formData.message}
           onChange={handleChange}
           disabled={status === "submitting"}
           placeholder="Let's build something interesting..."
-          className="w-full bg-border-custom/10 border border-border-custom px-4 py-3 text-sm text-foreground placeholder-secondary/50 rounded-md focus:outline-none focus:border-foreground/50 focus:ring-1 focus:ring-foreground/40 transition-all duration-200 resize-y min-h-[120px] disabled:opacity-50"
+          className="w-full bg-border-custom/10 border border-border-custom px-3 py-2 text-sm text-foreground placeholder-secondary/50 rounded-md focus:outline-none focus:border-foreground/50 focus:ring-1 focus:ring-foreground/40 transition-all duration-200 resize-y min-h-[70px] disabled:opacity-50"
         />
       </div>
 
-      <div className="flex flex-col gap-y-4 pt-2">
+      <div className="flex flex-col gap-y-3 pt-1">
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="w-fit inline-flex items-center justify-center bg-foreground text-background font-mono text-xs font-semibold px-6 py-3 rounded-md hover:opacity-90 active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 disabled:opacity-60 cursor-pointer"
+          className="w-fit inline-flex items-center justify-center bg-foreground text-background font-mono text-[11px] font-semibold px-4 py-2.5 rounded hover:opacity-90 active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 disabled:opacity-60 cursor-pointer"
         >
           {status === "submitting" ? (
             <span className="flex items-center gap-1.5">

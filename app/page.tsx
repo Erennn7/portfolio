@@ -31,13 +31,13 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex-shrink-0 self-start rounded-full border border-border-custom bg-border-custom/20 overflow-hidden group">
+            <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex-shrink-0 self-start rounded-full border border-border-custom bg-border-custom/20 overflow-hidden">
               <Image
                 src="/profile.jpeg"
                 alt="Samarth Kolarkar"
                 fill
                 sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 112px"
-                className="object-cover transition-all duration-500 group-hover:scale-105"
+                className="object-cover"
                 priority
               />
             </div>

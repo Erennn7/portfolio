@@ -24,21 +24,38 @@ export default function WorkPage() {
       learnings: "Co-founding a company while pursuing my studies taught me that code isn't written in a vacuum. I learned to make trade-offs: when to choose a simple PostgreSQL schema over a complex distributed setup, how to communicate technical complexity in plain English to clients, and how to prototype at high speeds without accumulating crippling technical debt.",
     },
     {
-      company: "ANK Upsurge Digital",
-      role: "MERN + GenAI Intern",
-      period: "2025",
-      description: "Joined a fast-growing digital products team as an engineering intern. Worked closely with senior engineers to implement AI features into the core team productivity SaaS application, focusing on real-time task generation and scheduling API pipelines.",
+      company: "Pragamana",
+      role: "Full Stack Developer Intern",
+      period: "April 2026 – June 2026",
+      description: "Worked on DIGI MOULD, an industrial multi-tenant IoT manufacturing telemetry platform, owning microservices engineering, real-time telemetry streaming, and automated operational reporting.",
       projects: [
         {
-          title: "GenAI Task Assistant",
-          details: "Integrated the Vercel AI SDK to stream real-time task blueprints and project outlines from LLM models. Designed backend prompt schemas that minimized hallucinated tasks.",
+          title: "DIGI MOULD Telemetry Platform",
+          details: "Developed and shipped features for DIGI MOULD, a multi-tenant IoT manufacturing telemetry platform (4 Express microservices + Next.js frontend), and owned its end-to-end cloud redeployment.",
         },
         {
-          title: "REST APIs & Optimization",
-          details: "Built new endpoints in Node.js/Express, refactoring database queries on MongoDB to optimize dashboard loading times. Wrote extensive integration tests to cover new features.",
+          title: "Real-time OEE & Pipeline Engine",
+          details: "Built downtime/OEE and shift-aware reporting features on top of a real-time MongoDB Change Streams + Socket.io pipeline, along with RBAC-gated password reset and audit-logged specification locking.",
         },
       ],
-      learnings: "Working in an established codebase helped me understand code review cycles, version control systems, and collaborative development. It sharpened my understanding of server-sent events, streaming responses, and writing production-ready APIs.",
+      learnings: "Working with industrial IoT manufacturing telemetry deepened my practical expertise in distributed microservices communication, real-time database change streams with MongoDB and Socket.io, and zero-downtime cloud redeployment.",
+    },
+    {
+      company: "ANK Upsurge Digital",
+      role: "MERN Stack & GenAI Intern",
+      period: "July 2025 – September 2025",
+      description: "Contributed to building generative AI features and assistive productivity tools for users with ADHD, focusing on real-time task generation, streaming API pipelines, and system reliability.",
+      projects: [
+        {
+          title: "LLM-Based Task Management System",
+          details: "Built RESTful backend routes and integrated Vercel AI SDK to power an LLM-based task management system for ADHD users.",
+        },
+        {
+          title: "Testing & Application Reliability",
+          details: "Wrote unit tests and assisted in frontend-backend integration, contributing to application reliability and code quality.",
+        },
+      ],
+      learnings: "Deepened practical skills in LLM application architecture with Vercel AI SDK, strict API contracts, and unit testing workflows that maintain code quality across full-stack features.",
     },
   ];
 
